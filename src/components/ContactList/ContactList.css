@@ -1,0 +1,26 @@
+.contact-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .number-contact {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  .contact-name {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  .contact-number {
+    color: #888;
+    margin-right: 10px;
+  }
