@@ -60,6 +60,30 @@ export class App extends Component {
     })
   }
 
+ componentDidMount(){
+  
+  const contacts = localStorage.getItem("contacts")
+  // массив начальное значение, после парса
+  const contactsParsed = JSON.parse(contacts)
+  console.log(contactsParsed)
+  // Как начальное значение задаём componentDidMount, если есть contactsParsed, чтобы небыло null
+  if(contactsParsed){
+    this.setState({contacts: contactsParsed})
+  }
+  
+
+
+ }
+ 
+  componentDidUpdate(prevProps, prevState){
+    // если this.state.contacts новое значение массива, не равно prevState.contacts предыдущему значению. Записываем в LocalStorage
+    if(this.state.contacts !==prevState.contacts){
+   
+      localStorage.setItem("contacts", JSON.stringify(this.state.contacts))
+    }
+   
+   
+  }
 
   render() {
     const filteredContact = this.handleFilterContact()
